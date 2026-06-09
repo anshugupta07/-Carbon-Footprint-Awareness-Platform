@@ -263,6 +263,8 @@ function SliderField({
         min={min}
         max={max}
         step={step}
+        aria-label={`${label} slider`}
+        aria-valuetext={`${value} ${unit}`}
         onValueChange={(v) => onChange(v[0])}
       />
     </div>
