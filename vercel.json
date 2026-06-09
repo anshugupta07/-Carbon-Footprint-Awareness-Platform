@@ -1,0 +1,7 @@
+{
+  "name": "carbon-footprint-awareness-platform",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".vercel/output",
+  "framework": "vite",
+  "installCommand": "npm ci"
+}
