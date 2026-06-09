@@ -131,6 +131,8 @@ export function CarbonApp() {
                       key={d}
                       type="button"
                       onClick={() => set("diet", d)}
+                      aria-pressed={inputs.diet === d}
+                      aria-label={`Select ${d.replace("-", " ")} diet option`}
                       className={`rounded-md border px-3 py-2 text-xs capitalize transition ${
                         inputs.diet === d
                           ? "border-primary bg-primary text-primary-foreground"
@@ -145,7 +147,7 @@ export function CarbonApp() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button onClick={() => setSubmitted(true)} className="gap-2">
+              <Button onClick={() => setSubmitted(true)} className="gap-2" aria-label="Show personalized carbon insights">
                 See my insights <ArrowRight className="h-4 w-4" />
               </Button>
               <Button
@@ -155,6 +157,7 @@ export function CarbonApp() {
                   setSubmitted(false);
                 }}
                 className="gap-2"
+                aria-label="Reset calculator inputs"
               >
                 <RotateCcw className="h-4 w-4" /> Reset
               </Button>
@@ -275,7 +278,7 @@ function ResultCard({ total }: { total: number }) {
     "Above the global average";
 
   return (
-    <Card className="border-border/60 bg-card p-6 shadow-[0_12px_30px_-18px_rgba(15,23,42,0.35)] sm:p-8 lg:sticky lg:top-6">
+    <Card aria-live="polite" className="border-border/60 bg-card p-6 shadow-[0_12px_30px_-18px_rgba(15,23,42,0.35)] sm:p-8 lg:sticky lg:top-6">
       <p className="text-xs uppercase tracking-wider text-muted-foreground">Your estimate</p>
       <div className="mt-3 flex items-baseline gap-2">
         <span className="font-serif text-6xl">{total.toFixed(1)}</span>
